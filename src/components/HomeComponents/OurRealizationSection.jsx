@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import realizacja1 from "../../assets/realizacja101.jpg";
-import realizacja2 from "../../assets/realizacja102.jpg";
-import realizacja3 from "../../assets/realizacja103.jpg";
-import realizacja4 from "../../assets/realizacja104.jpg";
-import realizacja5 from "../../assets/realizacja105.jpg";
-import realizacja6 from "../../assets/realizacja106.jpg";
+import realizacja1 from "../../assets/realizacja111.jpg";
+import realizacja2 from "../../assets/realizacja112.jpg";
+import realizacja3 from "../../assets/realizacja113.jpg";
+import realizacja4 from "../../assets/realizacja114.jpg";
+import realizacja5 from "../../assets/realizacja115.jpg";
+import realizacja6 from "../../assets/realizacja116.jpg";
 
 const slides = [
   realizacja1,
