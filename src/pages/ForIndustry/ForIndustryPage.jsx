@@ -29,12 +29,10 @@ const ForHousePage = () => {
           Oferta dla przemysłu
         </h1>
         <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
-          Wykonujemy instalacje przemysłowe:{" "}
-          <span className="font-semibold">wentylacja</span>,{" "}
-          <span className="font-semibold">klimatyzacja</span>,{" "}
-          <span className="font-semibold">systemy VRF</span>,{" "}
-          <span className="font-semibold">pompy ciepła</span> oraz{" "}
-          <span className="font-semibold">serwis urządzeń chłodniczych</span>.
+          Zanieczyszczenia powietrza w przemyśle wpływają na zdrowie ludzi, stan
+          maszyn i bezpieczeństwo pracy. Oferujemy instalacje wentylacyjne,
+          które eliminują zagrożenia i utrzymują stabilne warunki w obiektach
+          przemysłowych.
         </p>
       </div>
 

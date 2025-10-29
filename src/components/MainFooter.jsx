@@ -1,4 +1,5 @@
-import logo from "../assets/logo_blp.png";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo_reverse.png";
 const MainFooter = () => {
   return (
     <footer className="bg-[#003366] text-gray-300 py-10">
@@ -8,14 +9,15 @@ const MainFooter = () => {
           <img
             src={logo}
             alt="LogoBLP"
-            className="w-[150px] lg:w-[220px] transition-all duration-300"
+            className="w-[150px] lg:w-[220px] transition-all duration-300 mb-4"
           />
-          <p className="text-sm leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
-            perspiciatis delectus culpa modi possimus nihil, vitae, quibusdam
-            mollitia consequatur facere illum commodi. Ipsam quod perspiciatis
-            unde totam, ducimus consequatur necessitatibus.
-          </p>
+          <div>
+            <p>ul. Krakowska 31/209</p>
+            <p>32-065 Krzeszowice</p>
+            <p>NIP: 5130237105</p>
+            <p>REGON: 123062939</p>
+            <p>Alior Bank: 16 2490 0005 0000 4500 7694 3109</p>
+          </div>
         </div>
 
         {/* Linki */}
@@ -25,68 +27,25 @@ const MainFooter = () => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <a
-                href="#oferta"
-                className="hover:text-[#7ed957] transition-colors"
-              >
-                Nasza oferta
-              </a>
+              <Link to="/realization">Realizacje</Link>
             </li>
             <li>
-              <a
-                href="#realizacje"
-                className="hover:text-[#7ed957] transition-colors"
-              >
-                Realizacje
-              </a>
+              <Link to="/dotation">Dotacje</Link>
             </li>
             <li>
-              <a
-                href="#dotacje"
-                className="hover:text-[#7ed957] transition-colors"
-              >
-                Finansowanie i dotacje
-              </a>
-            </li>
-            <li>
-              <a
-                href="#kontakt"
-                className="hover:text-[#7ed957] transition-colors"
-              >
-                Kontakt
-              </a>
+              <Link to="/contact">Kontakt</Link>
             </li>
           </ul>
         </div>
 
-        <div>
+        <div className="felx flex-row">
           <h3 className="text-lg font-semibold text-white mb-3">Kontakt</h3>
-          <p>.</p>
-          <p>📞 +48 .</p>
-          <p>✉️ .</p>
-          <div className="flex space-x-4 mt-3">
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="hover:text-[#7ed957] transition-colors"
-            >
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="hover:text-[#7ed957] transition-colors"
-            >
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="hover:text-[#7ed957] transition-colors"
-            >
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-          </div>
+          <p>📞 +48 570 304 418</p>
+          <p>📞 +48 12 307 31 35</p>
+          <p>📞 +48 660 263 001</p>
+          <p>✉️ blp.oze@blp.com.pl</p>
+          <p>✉️ biuro@blpklimatyzacja.pl</p>
+          <p>✉️ biuro4@blpklimatyzacja.pl</p>
         </div>
       </div>
 

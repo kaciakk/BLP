@@ -43,7 +43,7 @@ const OurDotationSection = () => {
         </div>
 
         {/* Kafelki */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-12">
           <Link
             to="/dotation"
             className="fade-up opacity-0 translate-y-10 transition-all duration-700 delay-100"

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../Card";
 import { MdOutlineChat, MdOutlineDesignServices } from "react-icons/md";
 import { TbRulerMeasure } from "react-icons/tb";
@@ -6,6 +6,17 @@ import { FaScrewdriverWrench } from "react-icons/fa6";
 import { RiCustomerService2Line } from "react-icons/ri";
 
 const OurServicesSection = () => {
+  const useIsMobile = () => {
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+      const check = () => setIsMobile(window.innerWidth < 640);
+      check();
+      window.addEventListener("resize", check);
+      return () => window.removeEventListener("resize", check);
+    }, []);
+    return isMobile;
+  };
+  const isMobile = useIsMobile();
   // Dodanie animacji fade-up
   useEffect(() => {
     const elements = document.querySelectorAll(".fade-up");
@@ -44,20 +55,30 @@ const OurServicesSection = () => {
         </div>
 
         {/* Karty */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+        <div className="grid grid-cols-2 sm:grid-cols-2  content-center lg:grid-cols-5 gap-8 text-center">
+          {/* Konsultacje */}
           <div className="fade-up opacity-0 translate-y-10 transition-all duration-700 delay-100">
             <Card
               title="Konsultacje"
-              description="Indywidualne doradztwo już na pierwszym spotkaniu. Dojeżdżamy do klienta, oceniamy inwestycję i dobieramy najlepsze rozwiązania dopasowane do potrzeb."
+              description={
+                isMobile
+                  ? "Doradztwo na miejscu inwestycji."
+                  : "Indywidualne doradztwo już na pierwszym spotkaniu. Dojeżdżamy do klienta, oceniamy inwestycję i dobieramy najlepsze rozwiązania dopasowane do potrzeb."
+              }
               icon={<MdOutlineChat className="text-5xl text-[#7ed957]" />}
               className="bg-white shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 rounded-2xl p-6"
             />
           </div>
 
+          {/* Projektowanie */}
           <div className="fade-up opacity-0 translate-y-10 transition-all duration-700 delay-200">
             <Card
               title="Projektowanie"
-              description="Tworzymy projekty instalacji na podstawie planów lub pomiarów. Obliczamy zapotrzebowanie na ciepło, chłód, wentylację i energię, by dobrać optymalne urządzenia."
+              description={
+                isMobile
+                  ? "Projekt instalacji dopasowany do Twoich potrzeb."
+                  : "Tworzymy projekty instalacji na podstawie planów lub pomiarów. Obliczamy zapotrzebowanie na ciepło, chłód, wentylację i energię, by dobrać optymalne urządzenia."
+              }
               icon={
                 <MdOutlineDesignServices className="text-5xl text-blue-600" />
               }
@@ -65,28 +86,43 @@ const OurServicesSection = () => {
             />
           </div>
 
+          {/* Dobór */}
           <div className="fade-up opacity-0 translate-y-10 transition-all duration-700 delay-300">
             <Card
               title="Dobór"
-              description="Dobieramy urządzenia pod kątem ekonomii, ekologii, komfortu i trwałości. To kluczowy etap decydujący o efektywności i żywotności całej instalacji."
+              description={
+                isMobile
+                  ? "Wybór optymalnych urządzeń."
+                  : "Dobieramy urządzenia pod kątem ekonomii, ekologii, komfortu i trwałości. To kluczowy etap decydujący o efektywności i żywotności całej instalacji."
+              }
               icon={<TbRulerMeasure className="text-5xl text-amber-500" />}
               className="bg-white shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 rounded-2xl p-6"
             />
           </div>
 
+          {/* Montaż */}
           <div className="fade-up opacity-0 translate-y-10 transition-all duration-700 delay-400">
             <Card
               title="Montaż"
-              description="Wieloletnie doświadczenie w montażu instalacji chłodniczych, wentylacyjnych, pomp ciepła, klimatyzacji i fotowoltaiki. Pracują z nami certyfikowani inżynierowie."
+              description={
+                isMobile
+                  ? "Profesjonalny montaż instalacji."
+                  : "Wieloletnie doświadczenie w montażu instalacji chłodniczych, wentylacyjnych, pomp ciepła, klimatyzacji i fotowoltaiki. Pracują z nami certyfikowani inżynierowie."
+              }
               icon={<FaScrewdriverWrench className="text-5xl text-gray-700" />}
               className="bg-white shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300 rounded-2xl p-6"
             />
           </div>
 
+          {/* Serwis */}
           <div className="fade-up opacity-0 translate-y-10 transition-all duration-700 delay-500">
             <Card
               title="Serwis"
-              description="Kompleksowa opieka serwisowa – przeglądy, naprawy i konserwacja. Autoryzowany serwis producentów, takich jak Mitsubishi i Panasonic."
+              description={
+                isMobile
+                  ? "Pełna obsługa serwisowa."
+                  : "Kompleksowa opieka serwisowa – przeglądy, naprawy i konserwacja. Autoryzowany serwis producentów, takich jak Mitsubishi i Panasonic."
+              }
               icon={
                 <RiCustomerService2Line className="text-5xl text-[#0099ff]" />
               }

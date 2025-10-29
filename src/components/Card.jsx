@@ -27,7 +27,7 @@ const Card = ({ title, description, icon, onClick, isActive }) => {
 
       {/* Opis */}
       {description && (
-        <p className="relative z-10 text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+        <p className="relative z-10 text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300 ">
           {description}
         </p>
       )}

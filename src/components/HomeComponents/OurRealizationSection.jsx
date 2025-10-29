@@ -1,24 +1,39 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import realizacja1 from "../../assets/realizacja1.jpg";
-import realizacja3 from "../../assets/realizacja3.jpg";
-import realizacja4 from "../../assets/realizacja4.jpg";
-import realizacja5 from "../../assets/Obraz1.jpg";
-import realizacja6 from "../../assets/Obraz2.jpg";
-import realizacja7 from "../../assets/Obraz3.jpg";
-import realizacja8 from "../../assets/Obraz4.jpg";
+import realizacja1 from "../../assets/realizacja101.jpg";
+import realizacja2 from "../../assets/realizacja102.jpg";
+import realizacja3 from "../../assets/realizacja103.jpg";
+import realizacja4 from "../../assets/realizacja104.jpg";
+import realizacja5 from "../../assets/realizacja105.jpg";
+import realizacja6 from "../../assets/realizacja106.jpg";
 
 const slides = [
   realizacja1,
+  realizacja2,
   realizacja3,
   realizacja4,
   realizacja5,
   realizacja6,
-  realizacja7,
-  realizacja8,
 ];
 
+// 🔹 Hook do wykrywania urządzenia mobilnego
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isMobile;
+};
+
 const OurRealizationSection = () => {
+  const isMobile = useIsMobile();
+
+  // 🔹 Efekt fade-up (zostaje bez zmian)
   useEffect(() => {
     const elements = document.querySelectorAll(".fade-up");
     const observer = new IntersectionObserver(
@@ -37,6 +52,9 @@ const OurRealizationSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  // 🔹 Ograniczenie liczby zdjęć na mobilu
+  const displayedSlides = isMobile ? slides.slice(0, 6) : slides;
+
   return (
     <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Nagłówek */}
@@ -50,14 +68,14 @@ const OurRealizationSection = () => {
         </p>
       </div>
 
-      {/* Siatka zdjęć z animacjami wchodzącymi pojedynczo */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        {slides.map((img, index) => (
+      {/* Siatka zdjęć */}
+      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5">
+        {displayedSlides.map((img, index) => (
           <div
             key={index}
-            className={`fade-up opacity-0 translate-y-10 transition-all duration-700`}
+            className="fade-up opacity-0 translate-y-10 transition-all duration-700"
             style={{
-              transitionDelay: `${index * 120}ms`, // każdy element wchodzi z opóźnieniem 120ms
+              transitionDelay: `${index * 120}ms`,
             }}
           >
             <div className="relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 group">
@@ -66,11 +84,6 @@ const OurRealizationSection = () => {
                 alt={`realizacja-${index}`}
                 className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition duration-500 flex items-end justify-center opacity-0 group-hover:opacity-100">
-                <span className="text-white text-sm mb-3 px-3 py-1 bg-[#7ed957]/80 rounded-full">
-                  Zobacz szczegóły
-                </span>
-              </div>
             </div>
           </div>
         ))}

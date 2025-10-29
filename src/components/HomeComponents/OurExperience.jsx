@@ -1,7 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBolt, FaUserCog, FaHandHoldingUsd } from "react-icons/fa";
 
+// 🔹 Hook sprawdzający, czy ekran jest mobilny
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return isMobile;
+};
+
 const OurExperience = () => {
+  const isMobile = useIsMobile();
+
+  // 🔹 Efekt fade-up (pozostaje)
   useEffect(() => {
     const elements = document.querySelectorAll(".fade-up");
 
@@ -28,7 +45,7 @@ const OurExperience = () => {
           Dlaczego my?
         </h2>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {/* --- 1 --- */}
           <div className="fade-up opacity-0 translate-y-10 transition-all duration-700 delay-100 flex flex-col items-center p-8 bg-white/5 rounded-2xl shadow-md border border-white/10 cursor-pointer transform hover:scale-[1.03] hover:bg-[#7ed957]/10 hover:shadow-[#7ed957]/40 transition-all duration-500 ease-out">
             <FaBolt className="text-5xl text-[#7ed957] mb-4 transition-transform duration-500 group-hover:scale-110" />
@@ -36,8 +53,9 @@ const OurExperience = () => {
               Szybka realizacja
             </h3>
             <p className="text-gray-300 text-center leading-relaxed">
-              Realizujemy projekty terminowo i dynamicznie, dbając o każdy etap
-              montażu. Nasz zespół działa sprawnie, nie tracąc na jakości.
+              {isMobile
+                ? "Sprawna i terminowa realizacja."
+                : "Realizujemy projekty terminowo i dynamicznie, dbając o każdy etap montażu. Nasz zespół działa sprawnie, nie tracąc na jakości."}
             </p>
           </div>
 
@@ -48,8 +66,9 @@ const OurExperience = () => {
               Doświadczenie
             </h3>
             <p className="text-gray-300 text-center leading-relaxed">
-              Od lat tworzymy i serwisujemy instalacje HVAC oraz fotowoltaiczne.
-              Posiadamy wiedzę, certyfikaty i setki zadowolonych klientów.
+              {isMobile
+                ? "Lata praktyki i setki realizacji."
+                : "Od lat tworzymy i serwisujemy instalacje HVAC oraz fotowoltaiczne. Posiadamy wiedzę, certyfikaty i setki zadowolonych klientów."}
             </p>
           </div>
 
@@ -60,8 +79,9 @@ const OurExperience = () => {
               Pomoc w dotacjach
             </h3>
             <p className="text-gray-300 text-center leading-relaxed">
-              Pomagamy w formalnościach i uzyskaniu dotacji, aby Twoja
-              inwestycja była jeszcze bardziej opłacalna i ekologiczna.
+              {isMobile
+                ? "Wsparcie w uzyskaniu dotacji."
+                : "Pomagamy w formalnościach i uzyskaniu dotacji, aby Twoja inwestycja była jeszcze bardziej opłacalna i ekologiczna."}
             </p>
           </div>
         </div>

@@ -45,7 +45,7 @@ const HomePage = () => {
 
           <div className="mt-10">
             <a
-              href="#services"
+              href="#offer"
               className="bg-[#7ed957] hover:bg-[#6bc34c] text-white font-semibold px-8 py-3 rounded-2xl shadow-md transition-all duration-300 transform hover:-translate-y-1"
             >
               Poznaj naszą ofertę
@@ -57,14 +57,15 @@ const HomePage = () => {
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#ECF8F1] to-transparent" />
       </div>
 
-      {/* Sekcje (z płynnym flow kolorystycznym) */}
-      <section id="services">
-        <OurServicesSection />
-      </section>
+      <OurServicesSection />
+
       <OurExperience />
       <OurDotationSection />
-      <OurOfferSection />
+      <section id="offer">
+        <OurOfferSection />
+      </section>
       <OurRealizationSection />
+
       <OurCommentsSection />
     </div>
   );

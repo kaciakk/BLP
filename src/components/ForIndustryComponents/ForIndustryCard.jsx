@@ -4,10 +4,10 @@ import { MdOutlineFactory } from "react-icons/md";
 import { PiFan, PiThermometerLight } from "react-icons/pi";
 import ImageLeftCard from "../ImageLeftCard";
 import ImageRightCard from "../ImageRightCard";
-
-import industry_vent_1 from "../../assets/heat_recovery_vent_1.jpg";
-import industry_ac_1 from "../../assets/air_condition_1.jpg";
-import industry_factory from "../../assets/realizacja1.jpg";
+import { Link } from "react-router-dom";
+import industry_vent_1 from "../../assets/Wentylacja1.jpg";
+import industry_ac_1 from "../../assets/Klimatyzacja3.jpg";
+import industry_factory from "../../assets/Wentylacja2.jpg";
 
 const ForIndustryCard = () => {
   const [active, setActive] = useState("WentylacjaHali");
@@ -20,18 +20,24 @@ const ForIndustryCard = () => {
       icon: <TbWind className="text-sky-500" />,
       title: "Wentylacja hal przemysłowych",
       description:
-        "Projektujemy i wykonujemy instalacje wentylacji nawiewno-wywiewnej hal produkcyjnych z zachowaniem parametrów powietrza i komfortu cieplnego pracowników.",
+        "Projektujemy i wykonujemy systemy wentylacji nawiewno-wywiewnej dla hal produkcyjnych i obiektów przemysłowych.",
       img: industry_vent_1,
       layout: "right",
       children: (
         <>
           <h2 className="text-2xl sm:text-3xl font-semibold text-[#1d351c] mb-4">
-            Utrzymanie jakości powietrza w halach
+            Skuteczna wentylacja i komfort
           </h2>
           <p className="text-base sm:text-lg leading-relaxed mb-4">
-            Nasze instalacje zapewniają odpowiedni poziom czystości powietrza,
-            utrzymanie właściwego ciśnienia i komfort cieplny w strefach pracy.
-            Projektujemy systemy indywidualnie dla specyfiki danej produkcji.
+            Zapewniamy utrzymanie odpowiednich parametrów powietrza od czystości
+            i ilości wymian, po komfort cieplny pracowników. Nasze rozwiązania
+            wspierają prawidłowy przebieg procesów technologicznych oraz
+            poprawiają bezpieczeństwo i efektywność pracy.
+          </p>
+          <p className="text-base sm:text-lg leading-relaxed mb-4">
+            Dzięki precyzyjnemu sterowaniu i odpowiednio dobranym urządzeniom
+            utrzymujemy stabilne warunki środowiskowe wymagane przy procesach
+            technologicznych, poprawiając jakość i bezpieczeństwo pracy.
           </p>
         </>
       ),
@@ -41,18 +47,25 @@ const ForIndustryCard = () => {
       icon: <PiThermometerLight className="text-amber-500" />,
       title: "Wentylacja miejscowa i odpylanie",
       description:
-        "W procesach produkcyjnych często powstają lokalne źródła emisji pyłów, mgieł czy gazów – projektujemy systemy, które je eliminują.",
+        "Projektujemy systemy, które eliminują pyły, mgły i gazy bezpośrednio u źródła ich powstawania.",
       img: industry_factory,
       layout: "left",
       children: (
         <>
           <h2 className="text-2xl sm:text-3xl font-semibold text-[#1d351c] mb-4">
-            Bezpieczne środowisko pracy
+            Bezpieczne i czyste powietrze
           </h2>
           <p className="text-base sm:text-lg leading-relaxed mb-4">
-            Oferujemy systemy odpylania i wentylacji miejscowej, które
-            skutecznie eliminują pyły i opary. Chronimy pracowników oraz sprzęt
-            przed skutkami długotrwałego kontaktu z zanieczyszczeniami.
+            Oferujemy nowoczesne instalacje odpylania i wentylacji miejscowej,
+            które wychwytują pyły, dymy i opary bezpośrednio w miejscu ich
+            powstawania. Chronimy zdrowie pracowników, zwiększamy bezpieczeństwo
+            procesów i ograniczamy ryzyko wybuchu.
+          </p>
+          <p className="text-base sm:text-lg leading-relaxed mb-4">
+            Projektujemy i montujemy systemy odciągów stanowiskowych, filtracji
+            i odpylania dostosowane do rodzaju zanieczyszczeń i specyfiki
+            zakładu. Nasze rozwiązania spełniają wymagania norm BHP i ATEX,
+            zapewniając niezawodną i energooszczędną pracę.
           </p>
         </>
       ),
@@ -62,22 +75,27 @@ const ForIndustryCard = () => {
       icon: <TbAirConditioning className="text-blue-400" />,
       title: "Klimatyzacja przemysłowa",
       description:
-        "Wykonujemy montaże klimatyzacji w obiektach przemysłowych – systemy split, multisplit, kanałowe i VRF. Zapewniamy kompleksowy dobór, montaż i serwis.",
+        "Wykonujemy montaże systemów klimatyzacji split, multisplit, kanałowych i VRF dla obiektów przemysłowych.",
       img: industry_ac_1,
       layout: "right",
       children: (
         <>
           <h2 className="text-2xl sm:text-3xl font-semibold text-[#1d351c] mb-4">
-            Komfort i kontrola temperatury
+            Komfort i niezawodność
           </h2>
           <p className="text-base sm:text-lg leading-relaxed mb-4">
-            Wdrażamy rozwiązania dopasowane do wymagań obiektów przemysłowych.
-            Zapewniamy odpowiedni klimat dla ludzi i maszyn – nawet w trudnych
-            warunkach produkcyjnych.
+            Projektujemy i instalujemy systemy klimatyzacji przeznaczone do
+            obiektów przemysłowych, biur technicznych oraz pomieszczeń
+            produkcyjnych. Dobieramy rozwiązania zapewniające stabilne parametry
+            temperatury i wilgotności, nawet w trudnych warunkach
+            środowiskowych.
           </p>
           <p className="text-base sm:text-lg leading-relaxed mb-4">
-            Oferujemy projekt, montaż, szkolenie z obsługi, serwis gwarancyjny i
-            pogwarancyjny. Działamy na terenie Małopolski i Śląska.
+            Montujemy systemy <strong>split, multisplit, kanałowe i VRF</strong>
+            , dostosowane do wielkości i charakteru obiektu. Każda realizacja
+            obejmuje kompletny proces od projektu i doboru urządzeń, poprzez
+            montaż zgodny z zasadami BHP, po szkolenie personelu z obsługi
+            systemu.
           </p>
         </>
       ),
@@ -153,6 +171,13 @@ const ForIndustryCard = () => {
               </ImageLeftCard>
             )
           )}
+      </div>
+      <div className="flex justify-center fade-up opacity-0 translate-y-10 transition-all duration-700 delay-500">
+        <Link to="/contact">
+          <button className="bg-[#7ed957] rounded-2xl px-6 py-3 text-white font-semibold hover:bg-[#6dc94a] transition transform active:scale-95 duration-150 shadow-md">
+            Skontaktuj się z nami
+          </button>
+        </Link>
       </div>
     </div>
   );

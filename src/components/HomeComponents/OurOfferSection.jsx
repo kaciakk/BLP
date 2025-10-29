@@ -41,7 +41,7 @@ const OurOfferSection = () => {
         </div>
 
         {/* Kafelki */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-12">
+        <div className="grid  sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-12">
           <Link
             to="/for-house"
             className="fade-up opacity-0 translate-y-10 transition-all duration-700 delay-100"

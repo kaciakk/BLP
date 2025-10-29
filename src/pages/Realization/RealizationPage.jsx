@@ -1,31 +1,31 @@
-import React, { useEffect } from "react";
-import realizacja1 from "../../assets/realizacja1.jpg";
-import realizacja2 from "../../assets/realizacja2.jpg";
-import realizacja3 from "../../assets/realizacja3.jpg";
-import realizacja4 from "../../assets/realizacja1.jpg";
-import realizacja5 from "../../assets/realizacja4.jpg";
-import realizacja6 from "../../assets/realizacja3.jpg";
-import realizacja7 from "../../assets/realizacja2.jpg";
-import realizacja8 from "../../assets/realizacja3.jpg";
-import realizacja9 from "../../assets/realizacja4.jpg";
-import realizacja10 from "../../assets/realizacja4.jpg";
+import { useEffect } from "react";
+import realizacja0 from "../../assets/realizacja100.jpg";
+import realizacja1 from "../../assets/realizacja101.jpg";
+import realizacja2 from "../../assets/realizacja102.jpg";
+import realizacja3 from "../../assets/realizacja103.jpg";
+import realizacja4 from "../../assets/realizacja104.jpg";
+import realizacja5 from "../../assets/realizacja105.jpg";
+import realizacja6 from "../../assets/realizacja106.jpg";
+import realizacja7 from "../../assets/realizacja107.jpg";
+import realizacja8 from "../../assets/realizacja108.jpg";
+import realizacja9 from "../../assets/realizacja109.jpg";
 import useScrollToTop from "../../hooks/useScrollToTop";
 const RealizationPage = () => {
   useScrollToTop();
   const images = [
-    { src: realizacja1, alt: "Klimatyzacja – dom jednorodzinny" },
-    { src: realizacja2, alt: "Montaż jednostki zewnętrznej" },
-    { src: realizacja3, alt: "Klimatyzacja biurowa – Kraków" },
-    { src: realizacja4, alt: "Klimatyzacja biurowa – Kraków" },
-    { src: realizacja5, alt: "Klimatyzacja – dom jednorodzinny" },
-    { src: realizacja6, alt: "Montaż jednostki zewnętrznej" },
-    { src: realizacja7, alt: "System multisplit – dom parterowy, Wieliczka" },
+    { src: realizacja0, alt: "realizacja" },
+    { src: realizacja1, alt: "realizacja" },
+    { src: realizacja2, alt: "realizacja" },
+    { src: realizacja3, alt: "realizacja" },
+    { src: realizacja4, alt: "realizacja" },
+    { src: realizacja5, alt: "realizacja" },
+    { src: realizacja6, alt: "realizacja" },
     {
-      src: realizacja8,
-      alt: "Realizacja dla wspólnoty mieszkaniowej – Bochnia",
+      src: realizacja7,
+      alt: "realizacja",
     },
-    { src: realizacja9, alt: "Klimatyzacja biurowa – Kraków" },
-    { src: realizacja10, alt: "Montaż jednostki zewnętrznej – Rzeszów" },
+    { src: realizacja8, alt: "realizacja" },
+    { src: realizacja9, alt: "realizacja" },
   ];
 
   // Efekt fade-up z opóźnieniem per element
@@ -77,11 +77,6 @@ const RealizationPage = () => {
               alt={img.alt}
               className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 flex items-end justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-              <span className="text-white text-sm mb-3 px-3 py-1 bg-[#7ed957]/80 rounded-full">
-                {img.alt}
-              </span>
-            </div>
           </div>
         ))}
       </section>
@@ -91,7 +86,7 @@ const RealizationPage = () => {
         <h3 className="text-xl sm:text-2xl font-medium text-gray-700 max-w-2xl mx-auto leading-relaxed">
           Aktualne realizacje znajdziesz także na naszym{" "}
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/profile.php?id=61573822832687&rdid=W5ATNX6tyoPesWQD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17Avj7KDNS%2F#"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#7ed957] font-semibold hover:underline"
