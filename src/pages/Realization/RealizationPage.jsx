@@ -13,7 +13,7 @@ import useScrollToTop from "../../hooks/useScrollToTop";
 const RealizationPage = () => {
   useScrollToTop();
   const images = [
-    { src: realizacja0, alt: "realizacja" },
+    { src: realizacja0, alt: "realizacja0" },
     { src: realizacja1, alt: "realizacja" },
     { src: realizacja2, alt: "realizacja" },
     { src: realizacja3, alt: "realizacja" },
