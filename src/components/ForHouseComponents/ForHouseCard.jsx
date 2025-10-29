@@ -6,7 +6,7 @@ import ImageLeftCard from "../ImageLeftCard";
 import ImageRightCard from "../ImageRightCard";
 import air_condition_1 from "../../assets/air_condition_1.jpg";
 import air_heat_pump_1 from "../../assets/air_heat_pump_1.jpg";
-import heat_recovery_vent_1 from "../../assets/Obraz20.jpg";
+import heat_recovery_vent_1 from "../../assets/Obraz20.JPG";
 import solar_panels_1 from "../../assets/Fotowoltaika1.jpg";
 import { Link } from "react-router-dom";
 const ForHouseCard = () => {
